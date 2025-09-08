@@ -45,9 +45,6 @@ class PegawaiController extends Controller
         }
 
         $pegawai = Pegawai::create($validator->validated());
-        $jabatan = Jabatan::find($pegawai->jabatan_id);
-        $skpd = SKPD::find($pegawai->skpd_id);
-        $unitKerja = UnitKerja::find($pegawai->unit_kerja_id);
 
         return new RestAPIResource($pegawai, 'Pegawai berhasil ditambahkan');
     }
